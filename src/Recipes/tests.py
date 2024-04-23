@@ -12,7 +12,7 @@ class RecipesModelTest(TestCase):
        Recipe = Recipes.objects.get(id=1)
 
        # Get the metadata for the 'name' field and use it to query its data
-       field_label = Recipe._meta.get_field('name').verbose_name
+       field_label = Recipes._meta.get_field('name').verbose_name
 
        # Compare the value to the expected result
        self.assertEqual(field_label, 'name')
@@ -22,7 +22,13 @@ class RecipesModelTest(TestCase):
            Recipe = Recipes.objects.get(id=1)
 
            # Get the metadata for the 'name' field and use it to query its max_length
-           max_length = Recipe._meta.get_field('name').max_length
+           max_length = Recipes._meta.get_field('name').max_length
 
            # Compare the value to the expected result i.e. 120
            self.assertEqual(max_length, 120)
+
+    def test_get_absolute_url(self):
+       recipe = Recipes.objects.get(id=1)
+       #get_absolute_url() should take you to the detail page of Recipe #1
+       #and load the URL /list/1
+       self.assertEqual(recipe.get_absolute_url(), '/list/1')

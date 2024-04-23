@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +8,10 @@
     <title>Recipes App</title>
 </head>
 <body>
-<p>WELCOME TO THE RECIPES APP</p>
+    <div style="text-align: center">
+    <h1>WELCOME TO THE RECIPES APP</h1>
+    <img src="{% static '/recipes/images/recipebackground.jpg' %}" alt="home" width="600" height="300">
+    </div>
+    <div style="text-align: center"><p>CLICK HERE TO ADD A RECIPE</p></div>
 </body>
 </html>
