@@ -7,6 +7,7 @@ from .views import RecipeDetailView
 app_name = 'Recipes'
 
 urlpatterns = [
-   path('', home), path('list/', RecipeListView.as_view(), name='list'),
+   path('', home),
+   path('list/', RecipeListView.as_view(), name='list'),
    path('list/<pk>', RecipeDetailView.as_view(), name='recipedetail'),
 ]
