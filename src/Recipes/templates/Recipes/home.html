@@ -1,5 +1,7 @@
+{% extends 'recipes/base.html' %}
 {% load static %}
 
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +14,10 @@
     <h1>WELCOME TO THE RECIPES APP</h1>
     <br>
     <br>
-    <a href="{%url 'login' %}"> LOGIN</a>
-    <br>
     <br>
     <img src="{% static '/recipes/images/recipebackground.jpg' %}" alt="home" width="600" height="300">
     </div>
     <div style="text-align: center"><p>Please <a href="{%url 'login' %}"> LOGIN</a> to receive full access to this application</p></div>
 </body>
 </html>
+{% endblock %}
